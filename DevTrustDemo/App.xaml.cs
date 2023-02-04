@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevTrustDemo.Strartup;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -12,5 +13,6 @@ namespace DevTrustDemo
     /// </summary>
     public partial class App : Application
     {
+        
     }
 }

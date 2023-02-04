@@ -9,7 +9,7 @@ using System.Text;
 
 namespace DevTrustDemo.Services
 {
-    public class OrderToCsvFile : ICsvRowConvertable<Order>
+    public class OrderToCsvFile : IOrderToCsvFile
     {
         public bool WriteToCsvFile(List<Order> objects, string fileName)
         {

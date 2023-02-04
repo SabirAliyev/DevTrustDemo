@@ -1,4 +1,5 @@
 ﻿using DevExpress.Xpf.Core;
+using DevTrustDemo.Strartup;
 using DevTrustDemo.ViewModels;
 using System.ComponentModel;
 
@@ -12,6 +13,8 @@ namespace DevTrustDemo
         public MainWindow()
         {
             InitializeComponent();
+
+            BootsrtapContainer.OnStartUp();
         }
     }
 }

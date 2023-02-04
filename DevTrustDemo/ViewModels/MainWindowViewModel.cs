@@ -12,13 +12,7 @@ namespace DevTrustDemo.ViewModels
     {
         NorthwindEntities northwindDbContext;
 
-        private ICsvRowConvertable<Order> _csvOrderSerialize;
-
-        public ICsvRowConvertable<Order> CsvOrderSerialize {
-            get { return _csvOrderSerialize; }
-            set { _csvOrderSerialize = value; }
-        }
-
+        private IOrderToCsvFile CsvOrderSerialize { get; set; }
 
         public MainWindowViewModel()
         {
@@ -70,19 +64,27 @@ namespace DevTrustDemo.ViewModels
         public static string FileSaveDialog()
         {
             string filename = null;
-            SaveFileDialog saveFormDialog = new SaveFileDialog
+            SaveFileDialog saveFileDialog = new SaveFileDialog
             {
                 DefaultExt = "csv",
                 Filter = "CSV Files (*.csv)|*.csv|All files (*.*)|*.*"
             };
 
-            if (saveFormDialog.ShowDialog() == true) {
-                if (!saveFormDialog.FileName.EndsWith(".csv")) {
-                    filename = saveFormDialog.FileName + ".csv";
+            try {
+                if (saveFileDialog.ShowDialog() == true) {
+                    if (!saveFileDialog.FileName.EndsWith(".csv")) {
+                        filename = saveFileDialog.FileName + ".csv";
+                    }
+                    else {
+                        filename = saveFileDialog.FileName;
+                    }
                 }
-                else {
-                    filename = saveFormDialog.FileName;
-                }
+
+            }
+            catch (System.Exception ex) {
+
+                var ErrMessage = ex.Message;
+                throw;
             }
 
             return filename;
@@ -95,6 +97,7 @@ namespace DevTrustDemo.ViewModels
 
             bool ok = false;
             string filename = FileSaveDialog();
+            // string filename = "C:\\Users\\sa\\Desktop\\test.csv";
 
             if (filename != null) {
                 if (SelectedOrders != null && SelectedOrders.Count != 0) {
