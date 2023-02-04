@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTrustDemoUI", "DevTrustD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthwindData", "NorthwindData\NorthwindData.csproj", "{3315C763-9404-4419-A2D1-3151DB2EA648}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevTrustDemoSerializationLibrary", "DevTrustDemoSerializationLibrary\DevTrustDemoSerializationLibrary.csproj", "{16DF9715-6D9D-4754-8A62-CE4C348DBC33}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3315C763-9404-4419-A2D1-3151DB2EA648}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3315C763-9404-4419-A2D1-3151DB2EA648}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3315C763-9404-4419-A2D1-3151DB2EA648}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16DF9715-6D9D-4754-8A62-CE4C348DBC33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16DF9715-6D9D-4754-8A62-CE4C348DBC33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16DF9715-6D9D-4754-8A62-CE4C348DBC33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16DF9715-6D9D-4754-8A62-CE4C348DBC33}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

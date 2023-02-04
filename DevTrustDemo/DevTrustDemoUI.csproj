@@ -40,9 +40,6 @@
     <Reference Include="Castle.Windsor, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Windsor.5.1.2\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="CsvHelper, Version=30.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
-      <HintPath>..\packages\CsvHelper.30.0.1\lib\net47\CsvHelper.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.Xpf.Core.v22.2" />
     <Reference Include="DevExpress.Data.Desktop.v22.2" />
     <Reference Include="DevExpress.Data.v22.2" />
@@ -109,9 +106,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Dialogs\ISaveToFileDialog.cs" />
+    <Compile Include="Dialogs\SaveToFileDialog.cs" />
     <Compile Include="Services\BindingProxy.cs" />
-    <Compile Include="Services\OrderToCsvFile.cs" />
-    <Compile Include="Services\IOrderToCsvFile.cs" />
     <Compile Include="Strartup\BootsrtapContainer.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Page Include="MainWindow.xaml">
@@ -162,6 +159,10 @@
     <Folder Include="Views\DialogViews\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DevTrustDemoSerializationLibrary\DevTrustDemoSerializationLibrary.csproj">
+      <Project>{16df9715-6d9d-4754-8a62-ce4c348dbc33}</Project>
+      <Name>DevTrustDemoSerializationLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NorthwindData\NorthwindData.csproj">
       <Project>{3315c763-9404-4419-a2d1-3151db2ea648}</Project>
       <Name>NorthwindData</Name>

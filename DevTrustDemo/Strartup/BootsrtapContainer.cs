@@ -1,6 +1,7 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.Windsor;
 using DevTrustDemo.Services;
+using DevTrustDemoSerializationLibrary.CsvFile;
 
 namespace DevTrustDemo.Strartup
 {

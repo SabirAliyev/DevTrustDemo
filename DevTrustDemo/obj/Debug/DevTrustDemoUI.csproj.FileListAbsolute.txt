@@ -69,3 +69,6 @@ C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\obj\Debug\DevTrustDemoUI.cspr
 C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\obj\Debug\DevTrustDemoUI.csproj.CopyComplete
 C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\obj\Debug\DevTrustDemo.exe
 C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\obj\Debug\DevTrustDemo.pdb
+C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\bin\Debug\DevTrustDemoSerializationLibrary.dll
+C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\bin\Debug\DevTrustDemoSerializationLibrary.pdb
+C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\bin\Debug\DevTrustDemoSerializationLibrary.dll.config
