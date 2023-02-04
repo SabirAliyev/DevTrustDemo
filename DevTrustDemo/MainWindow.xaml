@@ -20,13 +20,18 @@
         <ser:BindingProxy
             x:Key="DataContextProxy"
             Data="{Binding}"/>
+
+        <dxg:TreeListView x:Key="myTreeListView" KeyFieldName="EmployeeID" ParentFieldName="ReportsTo"/>
+        <dxg:TableView x:Key="myTableView"/>
+        <dxg:CardView x:Key="myCardView"/>
     </Window.Resources>
 
     <DockPanel>
-        <dxr:RibbonControl DockPanel.Dock="Top" RibbonStyle="Office2019">
+        <dxr:RibbonControl DockPanel.Dock="Top" RibbonStyle="OfficeSlim">
             <dxr:RibbonControl.ToolbarItems>
-                <dxb:BarButtonItemLink BarItemName="newItem"/>
+                <dxb:BarButtonItemLink BarItemName="newItem" OverridesDefaultStyle="True"/>
             </dxr:RibbonControl.ToolbarItems>
+            
             <dxr:RibbonDefaultPageCategory>
                 <dxr:RibbonPage Caption="Home">
                     <dxr:RibbonPageGroup Caption="File">
@@ -54,29 +59,63 @@
             </dxr:RibbonStatusBarControl.RightItems>
         </dxr:RibbonStatusBarControl>
 
-        <dxg:GridControl ItemsSource="{Binding Orders}"
-                             SelectedItems="{Binding SelectedOrders}"
-                             SelectionMode="Row"
-                             AutoGenerateColumns="AddNew" 
-                             EnableSmartColumnsGeneration="True" >
-            <dxg:GridControl.View>
-                <dxg:TableView>
-
-                    <dxg:TableView.RowCellMenuCustomizations>
-
-                        <dxb:BarButtonItem Name="expToCsv" Content="Export to CSV" 
+        <dx:DXTabControl>
+            <dx:DXTabItem Header="Orders">
+                <dxg:GridControl ItemsSource="{Binding Orders}" SelectedItems="{Binding SelectedOrders}" SelectionMode="Row">
+                    <dxg:GridControl.View>
+                        <dxg:TableView ShowTotalSummary="True" AutoWidth="True">
+                            <dxg:TableView.RowCellMenuCustomizations>
+                                <dxb:BarButtonItem Name="expToCsv" Content="Export to CSV" 
                                                Command="{Binding Path=Data.ExportToCsvCommand, Source={StaticResource DataContextProxy}}"/>
-
-                        <dxb:BarButtonItem Name="expToTxt" Content="Export to TXT" 
+                                <dxb:BarButtonItem Name="expToTxt" Content="Export to TXT" 
                                                Command="{Binding Path=Data.ExportToTxtCommand, Source={StaticResource DataContextProxy}}"/>
+                            </dxg:TableView.RowCellMenuCustomizations>
+                        </dxg:TableView>
 
+                    </dxg:GridControl.View>
+                    <dxg:GridColumn FieldName="OrderID" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="CustomerID" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="OrderDate" IsSmart="True" GroupIndex="0" GroupInterval="DateMonth"/>
+                    <dxg:GridColumn FieldName="ShipVia" IsSmart="True">
+                        <dxg:GridColumn.EditSettings>
+                            <dxg:LookUpEditSettings ItemsSource="{Binding Shippers}" DisplayMember="CompanyName" ValueMember="ShipperID"/>
+                        </dxg:GridColumn.EditSettings>
+                    </dxg:GridColumn>
+                    <dxg:GridColumn FieldName="Freight" IsSmart="True">
+                        <dxg:GridColumn.EditSettings>
+                            <dxe:TextEditSettings MaskType="Numeric" Mask="c" DisplayFormat="c"/>
+                        </dxg:GridColumn.EditSettings>
+                    </dxg:GridColumn>
+                    <dxg:GridColumn FieldName="ShipName" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="ShipCity" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="ShipCountry" IsSmart="True"/>
 
-                    </dxg:TableView.RowCellMenuCustomizations>
-                </dxg:TableView>
+                </dxg:GridControl>
 
-            </dxg:GridControl.View>
-        </dxg:GridControl>
+            </dx:DXTabItem>
 
+            <dx:DXTabItem Header="Employee">
+                <dxg:GridControl ItemsSource="{Binding Employees}" View="{StaticResource myTreeListView}">
+                    <dxg:GridColumn FieldName="EmployeeID" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="ReportsTo" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="LastName" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="FirstName" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="Title" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="TitleOfCourtesy" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="HireDate" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="HomePhone" IsSmart="True"/>
+                </dxg:GridControl>
+            </dx:DXTabItem>
+
+            <dx:DXTabItem Header="Shippers">
+                <dxg:GridControl ItemsSource="{Binding Shippers}">
+                    <dxg:GridColumn FieldName="ShipperID" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="CompanyName" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="Phone" IsSmart="True"/>
+                </dxg:GridControl>
+            </dx:DXTabItem>
+
+        </dx:DXTabControl>
     </DockPanel>
 
 </dx:ThemedWindow>
