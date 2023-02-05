@@ -5,11 +5,13 @@ By right-clicking on a table row, a context menu should be displayed.
 The context menu should contain two item menus to export
 - in CSV
 - in TXT
+
 By clicking one of the item menu, the selected lines should be exported to the appropriate format CSV or TXT
 
 What will be paid attention to: 
 1.  Code quality 
 2.  Usage programming patterns, etc. 
+
 Minimum requirements:
 1.  Using MVVM and programming patterns, etc. 
 2.  Usage of Dependency Injection.
