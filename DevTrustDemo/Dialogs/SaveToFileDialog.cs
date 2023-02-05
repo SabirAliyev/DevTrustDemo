@@ -1,4 +1,4 @@
-﻿using Microsoft.Win32;
+﻿using DevExpress.XtraEditors;
 using System;
 
 namespace DevTrustDemo.Dialogs
@@ -8,27 +8,19 @@ namespace DevTrustDemo.Dialogs
         public string CsvFileSaveDialog()
         {
             string filename = null;
-            SaveFileDialog saveFileDialog = new SaveFileDialog
+            XtraSaveFileDialog saveFileDialog = new XtraSaveFileDialog
             {
                 DefaultExt = "csv",
                 Filter = "CSV Files (*.csv)|*.csv|All files (*.*)|*.*"
             };
 
-            try {
-                if (saveFileDialog.ShowDialog() == true) {
-                    if (!saveFileDialog.FileName.EndsWith(".csv")) {
-                        filename = saveFileDialog.FileName + ".csv";
-                    }
-                    else {
-                        filename = saveFileDialog.FileName;
-                    }
-                }
+            saveFileDialog.ShowDialog();
 
+            if (!saveFileDialog.FileName.EndsWith(".csv")) {
+                filename = saveFileDialog.FileName + ".csv";
             }
-            catch (Exception ex) {
-
-                var ErrMessage = ex.Message;
-                throw;
+            else {
+                filename = saveFileDialog.FileName;
             }
 
             return filename;
@@ -37,27 +29,19 @@ namespace DevTrustDemo.Dialogs
         public string TxtFileSaveDialog()
         {
             string filename = null;
-            SaveFileDialog saveFileDialog = new SaveFileDialog
+            XtraSaveFileDialog saveFileDialog = new XtraSaveFileDialog
             {
                 DefaultExt = "txt",
                 Filter = "txt Files (*.txt)|*.txt|All files (*.*)|*.*"
             };
 
-            try {
-                if (saveFileDialog.ShowDialog() == true) {
-                    if (!saveFileDialog.FileName.EndsWith(".txt")) {
-                        filename = saveFileDialog.FileName + ".txt";
-                    }
-                    else {
-                        filename = saveFileDialog.FileName;
-                    }
-                }
+            saveFileDialog.ShowDialog();
 
+            if (!saveFileDialog.FileName.EndsWith(".txt")) {
+                filename = saveFileDialog.FileName + ".txt";
             }
-            catch (Exception ex) {
-
-                var ErrMessage = ex.Message;
-                throw;
+            else {
+                filename = saveFileDialog.FileName;
             }
 
             return filename;

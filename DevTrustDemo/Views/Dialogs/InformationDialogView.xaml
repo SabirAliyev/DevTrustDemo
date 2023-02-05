@@ -50,7 +50,7 @@
             <Grid Grid.Column="1" Background="WhiteSmoke"/>
         </Grid>
 
-        <Grid Grid.Row="1" Background="#7fa3c1" >
+        <Grid Grid.Row="1" Background="#377fcc" >
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
