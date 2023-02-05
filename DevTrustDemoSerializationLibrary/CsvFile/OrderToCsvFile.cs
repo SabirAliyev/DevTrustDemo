@@ -13,6 +13,8 @@ namespace DevTrustDemoSerializationLibrary.CsvFile
     {
         public bool WriteToCsvFile(List<Order> objects, string fileName)
         {
+            bool ok = false;
+
             CsvConfiguration config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 Encoding = Encoding.UTF8,
@@ -57,32 +59,13 @@ namespace DevTrustDemoSerializationLibrary.CsvFile
 
                         writer.NextRecord();
                     }
+
+                    ok = true;
                 }
             }
 
-            return true;
+            return ok;
         }
-
-        private Employee GetEmployee(Order obj)
-        {
-            Employee emp = new Employee();
-
-            foreach (PropertyInfo prop in obj.GetType().GetProperties()) {
-                if (prop.CanRead) {
-                    object value = prop.GetValue(obj, null);
-                    string s = value == null ? "" : value.ToString();
-                    string name = prop.Name;
-
-                    if (name == "Employee") {
-                        emp = (Employee)value;
-                        break;
-                    }
-                }
-            }
-
-            return emp;
-        }
-
 
     }
 }
