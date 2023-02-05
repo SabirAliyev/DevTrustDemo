@@ -1,2 +1,2 @@
 orderId,customerId,emploeeId,orderDate,requireDate,shippedDate,shipVia,freight,shipName,shipAddress,shipCity,shipRegion,shipPostalCode,shipCountry
-10271,SPLIR,6,08/01/2018 00:00:00,08/29/2018 00:00:00,2,4.5400,Split Rail Beer & Ale,P.O. Box 555,Lander,WY,82520,USA
+10270,WARTH,1,08/01/2018 00:00:00,08/29/2018 00:00:00,1,136.5400,Wartian Herkku,Torikatu 38,Oulu,,90110,Finland

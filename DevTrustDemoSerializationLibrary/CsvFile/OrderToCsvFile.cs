@@ -11,10 +11,9 @@ namespace DevTrustDemoSerializationLibrary.CsvFile
 {
     public class OrderToCsvFile : IOrderToCsvFile
     {
-        public bool WriteToCsvFile(List<Order> objects, string fileName)
+        public int WriteToCsvFile(List<Order> objects, string fileName)
         {
-            bool ok = false;
-
+            int iterator = 0;
             CsvConfiguration config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 Encoding = Encoding.UTF8,
@@ -24,7 +23,7 @@ namespace DevTrustDemoSerializationLibrary.CsvFile
             using (var outputFile = new StreamWriter(fileName)) {
 
                 using (CsvWriter writer = new CsvWriter(outputFile, config)) {
-
+                    
                     writer.WriteField("orderId");
                     writer.WriteField("customerId");
                     writer.WriteField("emploeeId");
@@ -57,15 +56,12 @@ namespace DevTrustDemoSerializationLibrary.CsvFile
                         writer.WriteField(obj.ShipPostalCode);
                         writer.WriteField(obj.ShipCountry);
 
+                        iterator++;
                         writer.NextRecord();
                     }
-
-                    ok = true;
                 }
             }
-
-            return ok;
+            return iterator;
         }
-
     }
 }

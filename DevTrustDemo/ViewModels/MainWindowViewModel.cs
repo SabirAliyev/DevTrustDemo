@@ -15,9 +15,9 @@ namespace DevTrustDemo.ViewModels
 
         private IOrderToCsvFile CsvOrderSerialize { get; set; }
         private ISaveToFileDialog SaveDialog { get; set; }
+        private readonly IDialogViewer dialogViewer;
 
         public ObservableCollection<IDialogViewModel> Dialogs { get; } = new ObservableCollection<IDialogViewModel>();
-        private readonly IDialogViewer dialogViewer;
 
         #region Constructor
         public MainWindowViewModel()
@@ -78,27 +78,26 @@ namespace DevTrustDemo.ViewModels
         void ExportToCsv(int? param)
         {
             List<Order> orderList = new List<Order>();
-            bool ok = true;
 
             string filename = SaveDialog.CsvFileSaveDialog();
-            //string filename = "C:\\Users\\sa\\Desktop\\test.csv";
 
-            if (filename != null) {
+            if (!string.IsNullOrEmpty(filename)) {
                 if (SelectedOrders != null && SelectedOrders.Count != 0) {
                     foreach (var so in SelectedOrders) {
                         orderList.Add(so);
                     }
                 }
 
-                ok = CsvOrderSerialize.WriteToCsvFile(orderList, filename);
-
-                if (filename != null) {
-                    if (ok) {
-                        dialogViewer.ShowInformationDialog("Information", "Saving selected records into CSV file was successfully done.");
+                if (orderList.Count != 0) {
+                    try {
+                        int done = CsvOrderSerialize.WriteToCsvFile(orderList, filename);
+                        if (done != 0) {
+                            dialogViewer.ShowInformationDialog("Information", "Saving selected records into CSV file was successfully done.");
+                        }
                     }
-                    else {
+                    catch (System.Exception) {
                         dialogViewer.ShowWarningDialog("Warning", "Saving selected records into CSV file was caused an unexpected error");
-                    }
+                    }   
                 }
             }
         }
@@ -106,33 +105,30 @@ namespace DevTrustDemo.ViewModels
         void ExportToTxt(int? param)
         {
             List<Order> orderList = new List<Order>();
-            bool ok = true;
 
             string filename = SaveDialog.TxtFileSaveDialog();
-            // string filename = "C:\\Users\\sa\\Desktop\\test.txt";
 
-            if (filename != null) {
+            if (!string.IsNullOrEmpty(filename)) {
                 if (SelectedOrders != null && SelectedOrders.Count != 0) {
                     foreach (var so in SelectedOrders) {
                         orderList.Add(so);
                     }
                 }
 
-                ok = CsvOrderSerialize.WriteToCsvFile(orderList, filename);                
-            }
-
-            if (filename != null) {
-                if (ok) {
-                    dialogViewer.ShowInformationDialog("Information", "Saving selected records into TXT file was successfully done.");
-                }
-                else {
-                    dialogViewer.ShowWarningDialog("Warning", "Saving selected records into TXT file was caused an unexpected error");
+                if (orderList.Count != 0) {
+                    try {
+                        int done = CsvOrderSerialize.WriteToCsvFile(orderList, filename);
+                        if (done != 0) {
+                            dialogViewer.ShowInformationDialog("Information", "Saving selected records into TXT file was successfully done.");
+                        }
+                    }
+                    catch (System.Exception) {
+                        dialogViewer.ShowWarningDialog("Warning", "Saving selected records into TXT file was caused an unexpected error");
+                    }
                 }
             }
         }
         #endregion
-
-
 
     }
 }

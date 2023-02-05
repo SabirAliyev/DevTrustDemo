@@ -11,16 +11,17 @@ namespace DevTrustDemo.Dialogs
             XtraSaveFileDialog saveFileDialog = new XtraSaveFileDialog
             {
                 DefaultExt = "csv",
-                Filter = "CSV Files (*.csv)|*.csv|All files (*.*)|*.*"
+                Filter = "CSV Files (*.csv)|*.csv"
             };
 
             saveFileDialog.ShowDialog();
-
-            if (!saveFileDialog.FileName.EndsWith(".csv")) {
-                filename = saveFileDialog.FileName + ".csv";
-            }
-            else {
-                filename = saveFileDialog.FileName;
+            if (!string.IsNullOrEmpty(saveFileDialog.FileName)) {
+                if (!saveFileDialog.FileName.EndsWith(".csv")) {
+                    filename = saveFileDialog.FileName + ".csv";
+                }
+                else {
+                    filename = saveFileDialog.FileName;
+                }
             }
 
             return filename;
@@ -32,16 +33,18 @@ namespace DevTrustDemo.Dialogs
             XtraSaveFileDialog saveFileDialog = new XtraSaveFileDialog
             {
                 DefaultExt = "txt",
-                Filter = "txt Files (*.txt)|*.txt|All files (*.*)|*.*"
+                Filter = "TXT Files (*.txt)|*.txt"
             };
 
             saveFileDialog.ShowDialog();
 
-            if (!saveFileDialog.FileName.EndsWith(".txt")) {
-                filename = saveFileDialog.FileName + ".txt";
-            }
-            else {
-                filename = saveFileDialog.FileName;
+            if (!string.IsNullOrEmpty(saveFileDialog.FileName)) {
+                if (!saveFileDialog.FileName.EndsWith(".txt")) {
+                    filename = saveFileDialog.FileName + ".txt";
+                }
+                else {
+                    filename = saveFileDialog.FileName;
+                }
             }
 
             return filename;

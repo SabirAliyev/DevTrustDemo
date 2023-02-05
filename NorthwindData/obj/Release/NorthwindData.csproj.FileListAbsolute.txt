@@ -1,0 +1,14 @@
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\bin\Release\Northwind.mdf
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\bin\Release\Northwind_log.ldf
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\bin\Release\NorthwindData.dll.config
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\bin\Release\NorthwindData.dll
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\bin\Release\NorthwindData.pdb
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\bin\Release\EntityFramework.dll
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\bin\Release\EntityFramework.xml
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\obj\Release\NorthwindData.csproj.AssemblyReference.cache
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\obj\Release\NorthwindData.csproj.CoreCompileInputs.cache
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\obj\Release\NorthwindData.csproj.CopyComplete
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\obj\Release\NorthwindData.dll
+C:\Users\sa\source\repos\DevTrustDemo\NorthwindData\obj\Release\NorthwindData.pdb

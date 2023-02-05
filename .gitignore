@@ -1,2 +1,6 @@
 .vs/
+DevTrustDemo/obj/Debug/
+DevTrustDemoSerializationLibrary/bin/Debug/
+MvvmDialogsLibrary/bin/
+NorthwindData/bin/
 

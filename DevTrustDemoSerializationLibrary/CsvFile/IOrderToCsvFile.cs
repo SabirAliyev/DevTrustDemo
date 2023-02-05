@@ -8,6 +8,6 @@ namespace DevTrustDemoSerializationLibrary.CsvFile
     /// </summary>
     public interface IOrderToCsvFile
     {
-        bool WriteToCsvFile(List<Order> objects, string fileName);
+        int WriteToCsvFile(List<Order> objects, string fileName);
     }
 }
