@@ -1,4 +1,4 @@
-﻿using DevTrustDemo.Strartup;
+﻿using DevTrustDemo.Startup;
 using System;
 using System.Collections.Generic;
 using System.Configuration;

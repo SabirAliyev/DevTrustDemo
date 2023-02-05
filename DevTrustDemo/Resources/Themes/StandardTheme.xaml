@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <!-- Dialog Buttons Template -->
+        <ResourceDictionary>
+            <Style x:Key="DialogButtonStyle" TargetType="{x:Type Button}">
+                <Setter Property="Height" Value="25"/>
+                <Setter Property="Background" Value="#3052c1"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Padding" Value="20 0 0 0 "/>
+                <Setter Property="MinHeight" Value="20"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Name="background" 
+									BorderThickness="1" 
+									Padding="4,2" 
+									BorderBrush="WhiteSmoke" 
+									CornerRadius="2" 
+									Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            </Border>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="background" Property="Background" Value="#2f6eed"/>
+                                    <Setter TargetName="background" Property="BorderBrush" Value="White"/>
+                                </Trigger>
+
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="background" Property="Background" Value="Gray"/>
+                                </Trigger>
+
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>

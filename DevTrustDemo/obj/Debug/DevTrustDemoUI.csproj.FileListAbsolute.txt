@@ -72,3 +72,11 @@ C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\obj\Debug\DevTrustDemo.pdb
 C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\bin\Debug\DevTrustDemoSerializationLibrary.dll
 C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\bin\Debug\DevTrustDemoSerializationLibrary.pdb
 C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\bin\Debug\DevTrustDemoSerializationLibrary.dll.config
+C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\obj\Debug\Resources\Themes\StandardTheme.baml
+C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\obj\Debug\Views\Dialogs\InformationDialogView.g.cs
+C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\bin\Debug\MvvmDialogsLibrary.dll
+C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\bin\Debug\MvvmDialogsLibrary.pdb
+C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\obj\Debug\Views\Dialogs\InformationDialogView.baml
+C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\obj\Debug\Views\Dialogs\WarningDialogView.g.cs
+C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\obj\Debug\Views\Dialogs\WarningDialogView.baml
+C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\obj\Debug\App.baml

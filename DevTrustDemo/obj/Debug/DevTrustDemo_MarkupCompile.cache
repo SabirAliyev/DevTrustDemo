@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\sa\source\repos\DevTrustDemo\DevTrustDemo\App.xaml
-1219584333
+458006762
 
-10-818371151
-149-1200583288
-MainWindow.xaml;
+16691803430
+1501020294104
+MainWindow.xaml;Resources\Themes\StandardTheme.xaml;Views\Dialogs\InformationDialogView.xaml;Views\Dialogs\WarningDialogView.xaml;
 
 False
 

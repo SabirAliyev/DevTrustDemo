@@ -1,5 +1,5 @@
 ﻿using DevExpress.Xpf.Core;
-using DevTrustDemo.Strartup;
+using DevTrustDemo.Startup;
 using DevTrustDemo.ViewModels;
 using System.ComponentModel;
 

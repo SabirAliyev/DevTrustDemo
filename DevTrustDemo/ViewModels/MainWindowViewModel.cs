@@ -1,8 +1,7 @@
 ﻿using DevExpress.Mvvm;
 using DevTrustDemo.Dialogs;
-using DevTrustDemo.Services;
+using MvvmDialogsLibrary.Interfaces;
 using DevTrustDemoSerializationLibrary.CsvFile;
-using Microsoft.Win32;
 using NorthwindData;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -17,9 +16,14 @@ namespace DevTrustDemo.ViewModels
         private IOrderToCsvFile CsvOrderSerialize { get; set; }
         private ISaveToFileDialog SaveDialog { get; set; }
 
+        public ObservableCollection<IDialogViewModel> Dialogs { get; } = new ObservableCollection<IDialogViewModel>();
+        private readonly IDialogViewer dialogViewer;
+
         #region Constructor
         public MainWindowViewModel()
         {
+            dialogViewer = new DialogViewer(this);
+
             CsvOrderSerialize = new OrderToCsvFile();
             SaveDialog = new SaveToFileDialog();
 
@@ -74,9 +78,10 @@ namespace DevTrustDemo.ViewModels
         void ExportToCsv(int? param)
         {
             List<Order> orderList = new List<Order>();
+            bool ok = true;
 
             string filename = SaveDialog.CsvFileSaveDialog();
-            // string filename = "C:\\Users\\sa\\Desktop\\test.csv";
+            //string filename = "C:\\Users\\sa\\Desktop\\test.csv";
 
             if (filename != null) {
                 if (SelectedOrders != null && SelectedOrders.Count != 0) {
@@ -85,18 +90,23 @@ namespace DevTrustDemo.ViewModels
                     }
                 }
 
-                CsvOrderSerialize.WriteToCsvFile(orderList, filename);
+                ok = CsvOrderSerialize.WriteToCsvFile(orderList, filename);
 
-                // TODO show info dialog
-            } 
-            else {
-                // TODO show error dialog
+                if (filename != null) {
+                    if (ok) {
+                        dialogViewer.ShowInformationDialog("Information", "Saving selected records into CSV file was successfully done.");
+                    }
+                    else {
+                        dialogViewer.ShowWarningDialog("Warning", "Saving selected records into CSV file was caused an unexpected error");
+                    }
+                }
             }
         }
 
         void ExportToTxt(int? param)
         {
             List<Order> orderList = new List<Order>();
+            bool ok = true;
 
             string filename = SaveDialog.TxtFileSaveDialog();
             // string filename = "C:\\Users\\sa\\Desktop\\test.txt";
@@ -108,14 +118,17 @@ namespace DevTrustDemo.ViewModels
                     }
                 }
 
-                 CsvOrderSerialize.WriteToCsvFile(orderList, filename);
-
-                // TODO show info dialog
-            }
-            else {
-                // TODO show error dialog
+                ok = CsvOrderSerialize.WriteToCsvFile(orderList, filename);                
             }
 
+            if (filename != null) {
+                if (ok) {
+                    dialogViewer.ShowInformationDialog("Information", "Saving selected records into TXT file was successfully done.");
+                }
+                else {
+                    dialogViewer.ShowWarningDialog("Warning", "Saving selected records into TXT file was caused an unexpected error");
+                }
+            }
         }
         #endregion
 

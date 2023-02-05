@@ -8,6 +8,8 @@
     xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
     xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
     xmlns:local="clr-namespace:DevTrustDemo"
+    xmlns:dialogs="clr-namespace:MvvmDialogsLibrary.Behaviors;assembly=MvvmDialogsLibrary"
+    dialogs:DialogBehavior.DialogViewModels="{Binding Dialogs}"
     xmlns:vm="clr-namespace:DevTrustDemo.ViewModels"
     xmlns:ser="clr-namespace:DevTrustDemo.Services"
     Title="MainWindow" Height="600" Width="1000">

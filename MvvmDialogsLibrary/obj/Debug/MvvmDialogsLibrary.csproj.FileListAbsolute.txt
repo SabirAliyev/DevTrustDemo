@@ -1,0 +1,6 @@
+C:\Users\sa\source\repos\DevTrustDemo\MvvmDialogsLibrary\bin\Debug\MvvmDialogsLibrary.dll
+C:\Users\sa\source\repos\DevTrustDemo\MvvmDialogsLibrary\bin\Debug\MvvmDialogsLibrary.pdb
+C:\Users\sa\source\repos\DevTrustDemo\MvvmDialogsLibrary\obj\Debug\MvvmDialogsLibrary.csproj.AssemblyReference.cache
+C:\Users\sa\source\repos\DevTrustDemo\MvvmDialogsLibrary\obj\Debug\MvvmDialogsLibrary.csproj.CoreCompileInputs.cache
+C:\Users\sa\source\repos\DevTrustDemo\MvvmDialogsLibrary\obj\Debug\MvvmDialogsLibrary.dll
+C:\Users\sa\source\repos\DevTrustDemo\MvvmDialogsLibrary\obj\Debug\MvvmDialogsLibrary.pdb

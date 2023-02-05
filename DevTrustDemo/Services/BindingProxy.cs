@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 
 namespace DevTrustDemo.Services
 {
     /// <summary>
-    /// <see cref="System.Windows.Freezable"/> class that defines objects that have a modifiable and a read-only state 
-    /// and can inherit the DataContext even when they’re not in the visual or logical tree.
+    /// is <see cref="System.Windows.Freezable"/> class that defines objects that have a modifiable and a read-only state.
+    /// Can inherit the DataContext even when they’re not in the visual or logical tree.
+    /// Particularly useful when it is not possible to reference from a View to a corresponding View Model.
     /// </summary>
     public class BindingProxy : Freezable
     {

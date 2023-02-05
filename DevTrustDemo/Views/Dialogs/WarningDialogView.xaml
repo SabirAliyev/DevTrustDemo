@@ -1,0 +1,75 @@
+﻿<Window x:Class="DevTrustDemo.Views.Dialogs.WarningDialogView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DevTrustDemo.Views.Dialogs"
+        mc:Ignorable="d"
+        
+        Title="{Binding Caption}"
+        Width="600" MinWidth="400" SizeToContent="WidthAndHeight" Height="150" MinHeight="150" 
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+
+                <ResourceDictionary Source="/Resources/Themes/StandardTheme.xaml"/>
+
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="WhiteSmoke">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Image HorizontalAlignment="Left" Height="45" Margin="17,17,0,0" 
+               VerticalAlignment="Top" Width="55"
+               Source="pack://application:,,,/Resources/Icons/exclamation-round-icon.png"/>
+
+                <Grid Margin="10" Grid.Column="1">
+                    <TextBlock Text="{Binding Message}" FontSize="13" FontWeight="SemiBold"/>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Column="1" Background="WhiteSmoke"/>
+        </Grid>
+
+        <Grid Grid.Row="1" Background="red">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="90"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="1" Margin="5" Content="OK" 
+                    Name="YesButton" 
+                    VerticalAlignment="Top" 
+                    Width="75"
+                    Grid.Row="1" 
+                    Height="25"
+                    IsDefault="True"
+                    Style="{StaticResource DialogButtonStyle}"
+                    Command="{Binding OkCommand}">
+
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+
+</Window>
